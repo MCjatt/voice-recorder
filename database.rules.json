@@ -1,0 +1,13 @@
+{
+  "rules": {
+    ".read": "auth != null",
+    ".write": "auth != null",
+    "audios": {
+      ".indexOn": ["username"],
+      "$audio_id": {
+        ".read": "auth != null && data.child('username').val() === auth.token.name",
+        ".write": "auth != null && data.child('username').val() === auth.token.name"
+      }
+    }
+  }
+}

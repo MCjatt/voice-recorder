@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Firebase Test</title>
+    <!-- Firebase App (the core Firebase SDK) -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <!-- Firebase Authentication -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            console.log('Test page loaded');
+
+            // Firebase configuration
+            var firebaseConfig = {
+                apiKey: "AIzaSyB4ykquflHJz1Xc99buI4vLrzsh8-v1lDs",
+                authDomain: "voice-recorder-intra.firebaseapp.com",
+                databaseURL: "https://voice-recorder-intra-default-rtdb.europe-west1.firebasedatabase.app",
+                projectId: "voice-recorder-intra",
+                storageBucket: "voice-recorder-intra.appspot.com",
+                messagingSenderId: "959796633515",
+                appId: "1:959796633515:web:22989cf5f2d19b5f9bfcee",
+                measurementId: "G-0XT8VHBYPW"
+            };
+
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+
+            console.log('Firebase initialized:', firebase);
+            console.log('Firebase Auth:', firebase.auth);
+
+            // Test Firebase Authentication
+            try {
+                firebase.auth().signInAnonymously()
+                    .then(() => {
+                        console.log('Signed in anonymously');
+                    })
+                    .catch((error) => {
+                        console.error('Failed to sign in anonymously:', error);
+                    });
+            } catch (error) {
+                console.error('Error initializing Firebase Auth:', error);
+            }
+        });
+    </script>
+</head>
+<body>
+    <h1>Firebase Test Page</h1>
+</body>
+</html>

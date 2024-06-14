@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<header>
+    <div class="header-bg"></div>
+    <p class="welcome-text">Welcome to</p>
+    <h1>VocalBridge</h1>
+    <button id="logoutBtn">Logout</button>
+</header>
+<main>
+    <p class="description">VocalBridge was created to help users share pronunciations, accents, and the tone of their words with friends and colleagues online. It allows you to capture and share the unique aspects of your speech that are often lost in text, making communication clearer and more personal. Whether you're helping someone learn a new language, practicing for a presentation, or just sharing a message, this platform makes it easy to connect through the power of your voice.</p>
+    <button id="mic" class="mic-toggle">
+        <span class="material-icons">mic</span>
+    </button>
+    <audio class="playback" controls></audio>
+    <form id="audioNameForm">
+        <input type="text" id="audioName" placeholder="Enter audio name">
+        <button type="button" id="saveAudio">Save</button>
+    </form>
+    <div id="audioList">
+        <h2>Saved audio clips</h2>
+    </div>
+    <script>
+        const djangoUsername = "{{ username }}";
+    </script>
+</main>
+{% endblock %}
